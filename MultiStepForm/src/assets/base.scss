@@ -81,6 +81,7 @@ nav a:first-of-type {
   padding: 2rem;
   font-weight: normal;
   border-radius: 25px;
+  width: 100vw;
   box-shadow: 1px 0 10px 1px variables.$Light-gray;
 }
 
@@ -98,9 +99,8 @@ a{
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    padding: 1.5rem;
+    margin: 1rem;
   }
 }
 
