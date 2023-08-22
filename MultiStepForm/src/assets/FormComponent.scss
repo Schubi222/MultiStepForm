@@ -1,0 +1,51 @@
+@use "variables";
+.Form-Wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.Button-Wrapper{
+  position: absolute;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  bottom: 0;
+  .btn{
+    transition: .2s all;
+    cursor: pointer;
+
+    border-radius: 10px;
+    padding: 10px 15px;
+    background: variables.$Marine-blue;
+    grid-column: 3;
+    color: variables.$Alabaster;
+  }
+  .back-btn{
+    color: variables.$Cool-gray;
+    font-weight: bold;
+    transition: .2s all;
+    cursor: pointer;
+
+    &:hover{
+      color: variables.$Marine-blue;
+    }
+  }
+  .next-btn{
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 15px 20px;
+    &:hover{
+      background: #174a8b ;
+    }
+  }
+  .summary-btn{
+    background: variables.$Purplish-blue;
+    grid-column: 3;
+    color: variables.$Alabaster;
+    &:hover{
+      background: #938cfe;
+    }
+  }
+}

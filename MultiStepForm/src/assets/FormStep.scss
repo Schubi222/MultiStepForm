@@ -1,0 +1,45 @@
+@use "variables";
+
+  h1{
+    color: variables.$Marine-blue;
+    font-weight: bold;
+  }
+  input{
+    border-radius: 5px;
+    border: 1px solid variables.$Light-gray;
+    padding: 10px;
+    color: variables.$Marine-blue !important;
+    font-size: 16px;
+    font-weight: bold;
+    &.error:invalid{
+      border: 1px solid variables.$Strawberry-red;
+    }
+    &:focus{
+      outline-color: variables.$Marine-blue;
+    }
+  }
+  label{
+    font-size: 12px;
+    font-weight: bold;
+    color: variables.$Marine-blue !important;
+    margin-top: 1rem;
+    margin-bottom: .2rem;
+  }
+  .error_message{
+    font-size: 12px;
+    font-weight: bold;
+    color: variables.$Strawberry-red;
+    visibility:hidden;
+    &.display{
+      visibility: visible;
+    }
+  }
+  .label-and-error-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  h4{
+    color: variables.$Cool-gray;
+    margin-bottom: .5rem;
+  }
