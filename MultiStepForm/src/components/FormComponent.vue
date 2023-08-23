@@ -18,12 +18,12 @@ const currentForm = ref(1)
 
 const changeForm = (change:number) =>{
   currentForm.value += change
-  emit("update", currentForm.value)
+  emit("nextForm", currentForm.value)
 }
 const currentForm_show = computed(() =>{
   return currentForm.value === 1
 })
-const emit = defineEmits<{update:[currentForm:number]}>()
+const emit = defineEmits<{nextForm:[currentForm:number]}>()
 </script>
 
 <style scoped>

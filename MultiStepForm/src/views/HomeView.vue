@@ -1,7 +1,7 @@
 <template>
   <main class="Home-Wrapper">
     <StepMenu :currentStep="currentStep"/>
-    <FormComponent @update="currentForm => currentStep=currentForm"/>
+    <FormComponent @nextForm="currentForm => currentStep=currentForm"/>
   </main>
 </template>
 
