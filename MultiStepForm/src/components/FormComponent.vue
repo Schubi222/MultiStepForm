@@ -3,8 +3,8 @@
     <h1>{{h1_heading}}</h1>
     <h4>{{h4_heading}}.</h4>
     <form class="Form-Wrapper" @submit.prevent="changeForm(+1)">
-      <PersonalInfoStep v-if="currentForm_show(0)" />
-      <SelectPlanStep v-else-if="currentForm_show(1)"/>
+      <PersonalInfoStep v-if="currentForm_show(1)" />
+      <SelectPlanStep v-else-if="currentForm_show(2)"/>
       <AddOnsStep v-else-if="currentForm_show(3)"/>
       <SummaryStep v-else-if="currentForm_show(4)"/>
       <div class="Button-Wrapper">

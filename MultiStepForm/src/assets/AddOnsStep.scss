@@ -1,0 +1,49 @@
+@use "variables";
+
+.Add-On-Wrapper{
+  display: flex;
+  align-items: center;
+
+  border: 1px solid variables.$Purplish-blue;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+  position: relative;
+  gap: 30px;
+  transition: .2s all;
+  &:has(:checked){
+    background-color: #f8f9fe;
+  }
+
+  input{
+    accent-color: variables.$Purplish-blue !important;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .price{
+    color: variables.$Purplish-blue;
+    justify-self: flex-end;
+    margin-left: auto;
+  }
+  h3{
+    font-weight: bold;
+    color: variables.$Marine-blue;
+  }
+  .additional-info{
+    color: variables.$Cool-gray;
+  }
+}
+.noSelect {
+   -webkit-tap-highlight-color: transparent;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+ }
+.noSelect:focus {
+  outline: none !important;
+}
