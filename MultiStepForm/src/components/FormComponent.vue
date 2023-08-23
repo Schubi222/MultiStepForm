@@ -1,10 +1,10 @@
 <template>
-  <form class="Form-Wrapper" @submit.prevent="currentForm++">
+  <form class="Form-Wrapper" @submit.prevent="changeForm(+1)">
     <PersonalInfoStep v-if="currentForm_show" />
     <div class="Button-Wrapper">
-      <div class="back-btn " @click="currentForm--" v-if="currentForm > 1">Back</div>
+      <div class="back-btn " @click="changeForm(-1)" v-if="currentForm > 1">Back</div>
       <input class="next-btn btn" type="submit" v-if="currentForm < 4" value="Next Step">
-      <div class="summary-btn btn" @click="currentForm++" v-else>Confirm</div>
+      <div class="summary-btn btn" @click="console.log('TODO: IMPLEMENT')" v-else>Confirm</div>
     </div>
   </form>
 </template>
@@ -16,15 +16,14 @@ import {computed, ref} from "vue";
 
 const currentForm = ref(1)
 
-const test = () =>{
- console.log("AAAAAA")
+const changeForm = (change:number) =>{
+  currentForm.value += change
+  emit("update", currentForm.value)
 }
 const currentForm_show = computed(() =>{
-  console.log(currentForm.value === 1)
-  console.log(currentForm.value)
   return currentForm.value === 1
 })
-
+const emit = defineEmits<{update:[currentForm:number]}>()
 </script>
 
 <style scoped>
