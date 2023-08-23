@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('form', () => {
+export const useFormStore = defineStore('form', () => {
   const billing = ref('monthly')
   const selectedPlan = 0
 
