@@ -68,3 +68,18 @@ h4{
     }
   }
 }
+.Done{
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  h1{
+    color: variables.$Marine-blue;
+  }
+  p{
+    color: variables.$Cool-gray;
+  }
+}

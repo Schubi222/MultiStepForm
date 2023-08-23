@@ -59,5 +59,27 @@ export const useFormStore = defineStore('form', () => {
       },
     ]
   })
-  return {Info, Plan, Addons,billing_monthly, selectedPlan }
+
+  const selectedPlanObject = computed(() =>{
+    return Plan.value.plan.filter((plan) => plan.title === selectedPlan.value)[0]
+  })
+
+  const totalCost = computed(() =>{
+    let total_cost = 0
+
+    Addons.value.addons.forEach((addon) =>{
+      if(addon.selected && billing_monthly.value){
+        total_cost += addon.price_month
+      }
+      else if(!billing_monthly.value && addon.selected){
+        total_cost += addon.price_year
+      }
+    })
+    const selected = selectedPlanObject
+    total_cost += billing_monthly.value ? selected.value.price_month : selected.value.price_year
+
+    return total_cost
+  })
+
+  return {Info, Plan, Addons, billing_monthly, selectedPlan, totalCost, selectedPlanObject }
 })

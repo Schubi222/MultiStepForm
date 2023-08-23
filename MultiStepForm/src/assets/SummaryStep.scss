@@ -1,0 +1,52 @@
+@use "variables";
+.Summary-Wrapper{
+  &__selection{
+    background-color: #f8f9fe;
+    padding: 20px;
+    border-radius: 10px;
+    &-plan{
+      position: relative;
+      &-display{
+        font-weight: bold;
+        color: variables.$Marine-blue;
+      }
+      &-change-btn{
+        color: variables.$Purplish-blue;
+        text-decoration: underline;
+        text-underline: variables.$Purplish-blue;
+        cursor: pointer;
+      }
+      &-price{
+        position: absolute;
+        right: 0;
+        top: 40%;
+        color: variables.$Marine-blue;
+        font-weight: bold;
+      }
+    }
+    hr{
+      border: 1px solid variables.$Light-gray;
+      padding: 0;
+      margin: 10px 0;
+    }
+    &-addons{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__total{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+    p{
+      color: variables.$Cool-gray;
+      font-size: .9rem;
+    }
+    div{
+      color: variables.$Purplish-blue;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+}

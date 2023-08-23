@@ -1,7 +1,7 @@
 <template>
-  <div class="Form-Component-Wrapper">
+  <div class="Form-Component-Wrapper" v-if="ShowForm">
     <h1>{{h1_heading}}</h1>
-    <h4>{{h4_heading}}.</h4>
+    <h4>{{h4_heading}}</h4>
     <form class="Form-Wrapper" @submit.prevent="changeForm(+1)">
       <PersonalInfoStep v-if="currentForm_show(1)" />
       <SelectPlanStep v-else-if="currentForm_show(2)"/>
@@ -10,9 +10,15 @@
       <div class="Button-Wrapper">
         <div class="back-btn " @click="changeForm(-1)" v-if="currentForm > 1">Back</div>
         <input class="next-btn btn" type="submit" v-if="currentForm < 4" value="Next Step">
-        <div class="summary-btn btn" @click="console.log('TODO: IMPLEMENT')" v-else>Confirm</div>
+        <div class="summary-btn btn" @click="ShowForm=false" v-else>Confirm</div>
       </div>
     </form>
+  </div>
+  <div class="Done" v-else>
+    <img src="@/assets/images/icon-thank-you.svg" alt="Checkmark">
+    <h1>Thank you!</h1>
+    <p>Thanks for confirming your subscription! We hope you have fun using our platform.
+      If you ever need support, please feel free to email us at support@loremgaming.com</p>
   </div>
 </template>
 
@@ -25,6 +31,8 @@ import AddOnsStep from "@/components/form-steps/AddOnsStep.vue";
 import SummaryStep from "@/components/form-steps/SummaryStep.vue";
 
 const currentForm = ref(1)
+
+const ShowForm = ref(true)
 
 const changeForm = (change:number) =>{
   currentForm.value += change
