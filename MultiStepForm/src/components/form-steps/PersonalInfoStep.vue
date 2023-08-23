@@ -1,7 +1,6 @@
 <template>
 
-  <h1>Personal Info</h1>
-  <h4>Please provide your name, email address, and phone number.</h4>
+
 
   <div class="label-and-error-wrapper">
     <label for="name">Name</label>

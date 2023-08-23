@@ -1,0 +1,90 @@
+@use "variables";
+.Radio-Btns-Wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.Radio-Btn-Wrapper{
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+
+  padding: 15px;
+  margin-top: 30px;
+
+  border-radius: 10px;
+  border: 1px solid variables.$Light-gray;
+  display: flex;
+  flex-direction: column;
+
+  transition: .2s all;
+
+  position: relative;
+  &:has(:checked){
+    border: 1px solid variables.$Purplish-blue;
+    background: #f8f9fe;
+  }
+  input{
+    width: 100%;
+    height: 100%;
+  }
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  label{
+    color: variables.$Marine-blue;
+    font-weight: bold;
+    position: absolute;
+    bottom: 40px;
+
+  }
+  &__price{
+    color: variables.$Cool-gray;
+    position: absolute;
+    bottom: 15px;
+  }
+}
+
+.Switch-Wrapper{
+  display: flex;
+  background: variables.$Alabaster;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  .Selected{
+    color: variables.$Marine-blue;
+  }
+  div{
+    color: variables.$Cool-gray;
+    font-weight: bold;
+  }
+  .slider{
+    background: variables.$Marine-blue;
+    width: 50px;
+    height: 26px;
+    border-radius: 25px;
+    position: relative;
+    margin-inline: 20px;
+    &:before{
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      top: 3px;
+      transform: translateX(3px);
+      background: white;
+      position: absolute;
+      transition: .3s all;
+    }
+    &.yearly:before{
+      transform: translateX(27px);
+    }
+
+  }
+}

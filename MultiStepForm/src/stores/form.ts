@@ -2,8 +2,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useFormStore = defineStore('form', () => {
-  const billing = ref('monthly')
-  const selectedPlan = 0
+  const billing_monthly = ref(true)
+  const selectedPlan = ref('Arcade')
 
   const Info = ref({
     name:'',
@@ -17,16 +17,19 @@ export const useFormStore = defineStore('form', () => {
         title: 'Arcade',
         price_month: 9,
         price_year: 90,
+        image_url:'/src/assets/images/icon-arcade.svg'
       },
       {
         title: 'Advanced',
         price_month: 12,
         price_year: 120,
+        image_url:'/src/assets/images/icon-advanced.svg'
       },
       {
         title: 'Pro',
         price_month: 15,
         price_year: 150,
+        image_url:'/src/assets/images/icon-pro.svg'
       },
     ]
   })
@@ -56,5 +59,5 @@ export const useFormStore = defineStore('form', () => {
       },
     ]
   })
-  return {Info, Plan, Addons,billing, selectedPlan }
+  return {Info, Plan, Addons,billing_monthly, selectedPlan }
 })

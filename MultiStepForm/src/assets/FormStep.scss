@@ -1,9 +1,6 @@
 @use "variables";
 
-  h1{
-    color: variables.$Marine-blue;
-    font-weight: bold;
-  }
+
   input{
     border-radius: 5px;
     border: 1px solid variables.$Light-gray;
@@ -51,7 +48,4 @@
       visibility: visible;
     }
   }
-  h4{
-    color: variables.$Cool-gray;
-    margin-bottom: .5rem;
-  }
+

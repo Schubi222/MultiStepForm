@@ -1,8 +1,27 @@
 @use "variables";
+.Form-Component-Wrapper{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+h1{
+  color: variables.$Marine-blue;
+  font-weight: bold;
+}
+h4{
+  color: variables.$Cool-gray;
+  margin-bottom: .5rem;
+}
 .Form-Wrapper{
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  //&:has(.Radio-Btn-Wrapper){
+  //  display: grid;
+  //  grid-template-columns: repeat(3, 1fr);
+  //  grid-gap: 20px;
+  //}
 }
 .Button-Wrapper{
   position: absolute;
