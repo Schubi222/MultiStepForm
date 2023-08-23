@@ -37,8 +37,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px
-
+  font-size: 16px;
+  justify-content: center;
 }
 header {
   line-height: 1.5;
@@ -76,7 +76,7 @@ nav a:first-of-type {
 }
 
 #app {
-  max-width: 1440px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
